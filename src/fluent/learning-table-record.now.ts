@@ -4,7 +4,7 @@ import { Record } from '@servicenow/sdk/core'
  * Seeds one sample row when the app is installed.
  */
 Record({
-    table: 'x_fluent_learn_learning_item',
+    table: 'x_378497_fl_learn_learning_item',
     $id: Now.ID['learning_item_seed'],
     data: {
         title: 'My first Fluent record',

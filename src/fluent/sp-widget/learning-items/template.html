@@ -1,0 +1,47 @@
+<div class="panel panel-default fl-learn-panel">
+  <div class="panel-heading fl-learn-header">
+    <h3 class="panel-title">
+      <span class="glyphicon glyphicon-education"></span>
+      Learning Items
+    </h3>
+    <span class="badge">{{c.data.totalCount}}</span>
+  </div>
+  <div class="panel-body">
+    <div class="alert alert-danger" ng-if="c.data.errorMessage" role="alert">
+      {{c.data.errorMessage}}
+    </div>
+    <div class="text-center" ng-if="c.loading">
+      <span class="glyphicon glyphicon-refresh glyphicon-spin"></span>
+      Loading...
+    </div>
+    <table class="table table-striped table-hover" ng-if="!c.loading && c.data.items.length">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Notes</th>
+          <th>Priority</th>
+          <th>Due Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in c.data.items track by item.sys_id">
+          <td><strong>{{item.title}}</strong></td>
+          <td>{{item.notes}}</td>
+          <td>
+            <span class="label label-primary" ng-if="item.priority == 1">High</span>
+            <span class="label label-info" ng-if="item.priority == 2">Medium</span>
+            <span class="label label-default" ng-if="item.priority >= 3">Normal</span>
+          </td>
+          <td>{{item.due_date}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="fl-learn-empty" ng-if="!c.loading && !c.data.items.length && !c.data.errorMessage">
+      <span class="glyphicon glyphicon-inbox fl-learn-empty-icon"></span>
+      <p>No learning items yet.</p>
+    </div>
+    <button class="btn btn-default btn-sm" ng-click="c.refresh()" ng-disabled="c.loading">
+      <span class="glyphicon glyphicon-refresh"></span> Refresh
+    </button>
+  </div>
+</div>

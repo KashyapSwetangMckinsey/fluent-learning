@@ -8,7 +8,7 @@ import { uppercaseTitle } from '../../server/uppercase-title'
 BusinessRule({
     $id: Now.ID['uppercase_title_br'],
     name: 'Uppercase Learning Item Title',
-    table: 'x_fluent_learn_learning_item',
+    table: 'x_378497_fl_learn_learning_item',
     when: 'before',
     action: ['insert', 'update'],
     order: 100,

@@ -1,0 +1,21 @@
+.fl-learn-panel .panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fl-learn-header .glyphicon-education {
+  margin-right: 8px;
+}
+
+.fl-learn-empty {
+  text-align: center;
+  padding: 32px 16px;
+  color: #666;
+}
+
+.fl-learn-empty-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 12px;
+}
